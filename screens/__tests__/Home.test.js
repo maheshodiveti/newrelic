@@ -2,6 +2,12 @@ import React from 'react';
 import {render, fireEvent} from '@testing-library/react-native';
 import Home from '../Home';
 
+test('check component render properly', () => {
+  const { debug } = render(<Home />);
+  debug();
+});
+
+
 test('Home should render OK', async () => {
   const {getByText, getByTestId, getAllByTestId, queryByText} = render(
     <Home />,
