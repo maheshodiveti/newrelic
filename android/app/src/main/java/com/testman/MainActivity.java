@@ -2,6 +2,8 @@ package com.testman;
 
 import com.facebook.react.ReactActivity;
 
+import com.newrelic.agent.android.NewRelic;
+
 public class MainActivity extends ReactActivity {
 
   /**
@@ -12,4 +14,12 @@ public class MainActivity extends ReactActivity {
   protected String getMainComponentName() {
     return "TestMan";
   }
+
+  private static final int REQUEST_ID = 1;
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    NewRelic.withApplicationToken("AAe1233cc86951ac95c59009fb19b719de923f77f8-NRMA").start(this);
+  }
+
 }
+
